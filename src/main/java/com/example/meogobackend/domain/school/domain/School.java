@@ -25,7 +25,7 @@ public class School {
     private String createDate;
 
     @Builder
-    public School (String schoolName, String schoolText, String createDate){
+    public School (String schoolName, String schoolText) {
         this.schoolName = schoolName;
         this.schoolText = schoolText;
         this.createDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy .MM .dd"));
