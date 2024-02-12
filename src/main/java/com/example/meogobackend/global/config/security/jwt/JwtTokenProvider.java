@@ -1,5 +1,7 @@
 package com.example.meogobackend.global.config.security.jwt;
 
+import com.example.meogobackend.domain.user.domain.repository.RefreshTokenRepository;
+import com.example.meogobackend.domain.user.domain.repository.UserRepository;
 import com.example.meogobackend.global.config.security.jwt.exception.NotAccessTokenException;
 import com.example.meogobackend.global.config.security.jwt.exception.TokenErrorException;
 import com.example.meogobackend.global.config.security.jwt.exception.TokenUnauthorizedException;
@@ -22,6 +24,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 @Slf4j
@@ -36,6 +40,7 @@ public class JwtTokenProvider {
     private Long refreshTokenTime;
 
     private final UserDetailsService userDetailsService;
+
     private final Key key;
 
     public JwtTokenProvider(@Value("${spring.jwt.key}") String secretKey, UserDetailsService userDetailsService) {

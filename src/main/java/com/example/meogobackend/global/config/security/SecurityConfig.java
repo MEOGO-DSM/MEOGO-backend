@@ -39,8 +39,9 @@ public class SecurityConfig extends SecurityConfigurerAdapter {
                 .and()
                 .httpBasic().disable()
                 .authorizeRequests()
-                .antMatchers("/user/*").permitAll()
-                .antMatchers("/post/search", "/post/postImage/*").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/user/**").permitAll()
+                .antMatchers("/post/postImage/*").permitAll()
                 .antMatchers(HttpMethod.GET, "/user").authenticated()
                 .anyRequest().authenticated()
 
