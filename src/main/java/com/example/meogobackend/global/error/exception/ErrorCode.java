@@ -14,6 +14,7 @@ public enum ErrorCode {
     IMAGE_BAD_REQUEST(400, "이미지의 형식이 올바르지 않습니다"),
     IMAGE_UPLOAD_FAIL(400, "이미지가 정상적으로 저장되지 않았습니다"),
     USER_NOT_MATCH(400, "유저가 일치하지 않습니다."),
+    NO_PERMISSION(403, "권한이 없습니다."),
 
     //UnAuthorised
     NOT_ACCESS_TOKEN(401, "access 토큰이 아닙니다."),
@@ -24,7 +25,7 @@ public enum ErrorCode {
     //Not Found
     USER_NOT_FOUND(404,"찾을 수 없는 유저입니다."),
     POST_NOT_FOUND(404, "게시글을 찾을 수 없습니다."),
-    SKEIN_NOT_FOUND(404, "타래를 찾을 수 없습니다."),
+    COMMENT_NOT_FOUND(404, "댓글을 찾을 수 없습니다."),
     REFRESH_TOKEN_NOT_FOUND(404, "리프레쉬 토큰을 찾을 수 없습니다. "),
 
     USER_ID_ALREADY_EXIST(409, "계정 아이디가 이미 존재합니다"),
